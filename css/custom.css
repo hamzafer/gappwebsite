@@ -18,7 +18,7 @@
     height: 2.5rem;
   }
   .file input {
-    min-width: 14rem;
+    width: 100%;
     margin: 0;
     filter: alpha(opacity=0);
     opacity: 0;
@@ -65,6 +65,11 @@
   /* Focus */
   .file input:focus ~ .file-custom {
     box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+  }
+
+  .signUpFormLabel .lead {
+    line-height: 40px;
+    font-size: 17px;
   }
   
   
