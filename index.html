@@ -134,24 +134,35 @@
             <section class="switchable bg--secondary" id="signUpSection">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-md-6 col-lg-5">
+                        <div class="col-md-12 col-lg-12">
                             <div class="switchable__text">
                                 <h2>Create a GAPP account</h2> <span>Already have an account? <a href="#">Sign In</a></span>
                                 <hr class="short">
                                 <form>
                                     <div class="row">
-                                        <div class="col-12"> <input type="text" name="firstName" placeholder="Your Name"> </div>
-                                        <div class="col-12"> <input type="email" name="emailAddress" placeholder="Email Address"> </div>
-                                        <div class="col-12"> <input type="password" name="password" placeholder="Password"> </div>
-                                        <div class="col-12"> <input type="password" name="passwordConfirm" placeholder="Confirm Password"> </div>
-                                        <div class="col-12"> <input type="text" name="businessName" placeholder="Business Name"> </div>
-                                        <div class="col-3 signUpFormLabel"><p class="lead">Pick Color</p></div><div class="col-9"><input type="color" value="#ff0000"></div>
-                                        <div class="col-4 signUpFormLabel"><p class="lead">Upload Logo</p></div>
-                                        <div class="col-8"><label class="file">
-                                            <input type="file" id="file" aria-label="File browser example">
-                                            <span class="file-custom"></span>
-                                          </label>
+                                        <div class="col-6"> <input type="text" name="firstName" placeholder="First Name"> </div>
+                                        <div class="col-6"> <input type="text" name="lastName" placeholder="Last Name"> </div>
+                                        <div class="col-6"> <input type="email" name="email" placeholder="Email Address"> </div>
+                                        <div class="col-6"> <input type="number" name="personalPhoneNumber" placeholder="Phone Number"> </div>
+                                        <div class="col-6"> <input type="password" name="password" placeholder="Password"> </div>
+                                        <div class="col-6"> <input type="text" name="brandName" placeholder="Business Name"> </div>
+                                        <div class="col-3">
+                                            <label for="favcolor">Accent color:</label>
+                                            <input type="color" id="favcolor" name="primaryColor" value="#ff0000"><br><br>
                                         </div>
+                                        <div class="col-3">
+                                            <label for="favcolor">Main Logo:</label>
+                                            <input type="file" id="file" aria-label="File browser example">
+                                        </div>
+                                        <div class="col-3">
+                                            <label for="favcolor">Splash Screen:</label>
+                                            <input type="file" id="file" aria-label="File browser example">
+                                        </div>
+                                        <div class="col-3">
+                                            <label for="favcolor">App Icon:</label>
+                                            <input type="file" id="file" aria-label="File browser example">
+                                        </div>
+                                        
                                         
                                         <div class="col-12"> <button type="submit" class="btn btn--primary">Create Account</button> </div>
                                         <hr>
@@ -161,7 +172,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-6"> <img alt="Image" src="img/sign-up.png"> </div>
+                        <!-- <div class="col-md-6 col-lg-6"> <img alt="Image" src="img/sign-up.png"> </div> -->
                     </div>
                 </div>
             </section>
