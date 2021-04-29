@@ -23,7 +23,7 @@ mr = (function (mr, $, window, document){
         if(mr.status.windowLoadPending){
             windowLoad(mr.setContext());
         }
-
+        const colorPicker = $('#color');
         colorPicker.addEventListener("input", updateFirst, false);
         colorPicker.addEventListener("change", watchColorPicker, false);
 
