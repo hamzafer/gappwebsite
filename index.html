@@ -138,7 +138,7 @@
                             <div class="switchable__text">
                                 <h2>Create a GAPP account</h2> <span>Already have an account? <a href="#">Sign In</a></span>
                                 <hr class="short">
-                                <form enctype="multipart/form-data" action="http://admin.gapp.pk/v1/onboarding/signup" method="post">
+                                <form id="signupForm" enctype="multipart/form-data" action="http://admin.gapp.pk/v1/onboarding/signup" method="post">
                                     <div class="row">
                                         <div class="col-6"><label for="firstName"></label><input type="text" id="firstName" name="firstName" placeholder="First Name"> </div>
                                         <div class="col-6"> <input type="text" id="lastName" name="lastName" placeholder="Last Name"> </div>
@@ -197,7 +197,24 @@
         <script src="js/typed.min.js"></script>
         <script src="js/smooth-scroll.min.js"></script>
         <script src="js/scripts.js"></script>
-
+        <script>
+            $("#signupForm").on('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: 'http://admin.gapp.pk/v1/onboarding/signup',
+                    data: new FormData($('#signupForm')[0]),
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    error: function(e) {
+                        console.log("ERROR", e)
+                    },
+                    success: function(message) {
+                        console.log("SUCCESS", message)
+                    }
+                });
+            })
+        </script>
     </body>
 
 </html>
