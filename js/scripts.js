@@ -32,6 +32,13 @@ mr = (function (mr, $, window, document){
             p.style.color = event.target.value;
         });
         }
+        function updateFirst(event) {
+            const p = document.querySelector("p");
+
+            if (p) {
+                p.style.color = event.target.value;
+            }
+        }
     }
 
     function windowLoad(context){
