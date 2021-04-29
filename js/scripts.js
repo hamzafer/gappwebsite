@@ -24,8 +24,8 @@ mr = (function (mr, $, window, document){
             windowLoad(mr.setContext());
         }
         const colorPicker = $('#color');
-        colorPicker.addEventListener("input", updateFirst, false);
-        colorPicker.addEventListener("change", watchColorPicker, false);
+        colorPicker.on("input", updateFirst, false);
+        colorPicker.on("change", watchColorPicker, false);
 
         function watchColorPicker(event) {
         document.querySelectorAll("p").forEach(function(p) {
