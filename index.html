@@ -167,7 +167,7 @@
                                         <div class="col-12"> <button type="submit" class="btn btn--primary">Create Account</button> </div>
                                         <hr>
                                         <div class="col-12"> <span class="type--fine-print">By signing up, you agree to the <a href="#">Terms of Service</a></span> </div>
-
+                                        <div id="errorDiv" class="col-12" style="display: none"></div>
                                     </div>
                                 </form>
                             </div>
@@ -208,7 +208,7 @@
                     contentType: false,
                     processData: false,
                     error: function(e) {
-                        console.log("ERROR", e)
+                        $("#errorDiv")[0].innerHTML = e.responseJSON.message
                     },
                     success: function(message) {
                         window.location.replace(`${serverURL}/backoffice`)
