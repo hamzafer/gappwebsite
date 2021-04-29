@@ -198,10 +198,11 @@
         <script src="js/smooth-scroll.min.js"></script>
         <script src="js/scripts.js"></script>
         <script>
+            const serverURL = "http://admin.gapp.pk"
             $("#signupForm").on('submit', function (e) {
                 e.preventDefault();
                 $.ajax({
-                    url: 'http://admin.gapp.pk/v1/onboarding/signup',
+                    url: `${serverURL}/v1/onboarding/signup`,
                     data: new FormData($('#signupForm')[0]),
                     type: 'POST',
                     contentType: false,
@@ -210,7 +211,7 @@
                         console.log("ERROR", e)
                     },
                     success: function(message) {
-                        console.log("SUCCESS", message)
+                        window.location.replace(`${serverURL}/backoffice`)
                     }
                 });
             })
