@@ -1,0 +1,113 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>GAPP - Terms of Service</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CRubik:300,400,500" rel="stylesheet" type="text/css">
+        <link href="css/font-rubiklato.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body data-smooth-scroll-offset="77">
+        <div class="nav-container">
+            <div class="via-1617969468978" via="via-1617969468978" vio="Main Navigation">
+                <div class="bar bar--sm visible-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3 col-md-2">
+                                <a href="index.html"> <img class="logo logo-dark" alt="logo" src="img/logo-dark.png"> <img class="logo logo-light" alt="logo" src="img/logo-light.png"> </a>
+                            </div>
+                            <div class="col-9 col-md-10 text-right">
+                                <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs hidden-sm"> <i class="icon icon--sm stack-interface stack-menu"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav id="menu1" class="bar bar-1 hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2 hidden-xs">
+                                <div class="bar__module">
+                                    <a href="index.html"> <img class="logo logo-dark" alt="logo" src="img/logo-dark.png"> <img class="logo logo-light" alt="logo" src="img/logo-light.png"> </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
+                                <div class="bar__module">
+
+                                </div>
+                                <div class="bar__module">
+                                    <a class="btn btn--sm type--uppercase" href="https://gapp.pk/login"> <span class="btn__text">
+                                    Login<br></span> </a>
+                                    <a class="btn btn--sm btn--primary type--uppercase" href="#signUpSection"> <span class="btn__text">
+                                    Buy Now
+                                </span> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="main-container">
+            <a id="main-header" class="in-page-link"></a>
+            <section class="tos">
+                <div class="container">
+                    <div class=" row">
+                        <div class="col-md-12">
+                            <h1 class="text-center">Data Processing Addendum</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-12 mb-5">
+                            <div class="map-container"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.195281384368!2d72.97656341580155!3d33.70389548070206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbd7e2f1d0ae5%3A0x73188293ab71c153!2sWork%20Zone!5e0!3m2!1sen!2s!4v1618092256121!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> </div>
+                        </div>
+                        <div class="col-md-8 col-lg-6 col-12">
+                            <h3>Lower Ground, Silk Bank Plaza,<br>E-11/3, Islamabad, Pakistan</h3>
+                            <p class="lead"> E: <a href="mailto:hello@gapp.pk">hello@gapp.pk</a><br> P: 333 574 1318</p>
+                            <p class="lead"> Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. </p>
+                            <p class="lead"> We are open from 9am — 5pm week days. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script>
+            const serverURL = "http://admin.gapp.pk"
+            $("#signupForm").on('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: `${serverURL}/v1/onboarding/signup`,
+                    data: new FormData($('#signupForm')[0]),
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    error: function(e) {
+                        $("#errorDiv")[0].innerHTML = e.responseJSON.message
+                    },
+                    success: function(message) {
+                        window.location.replace(`${serverURL}/backoffice`)
+                    }
+                });
+            })
+        </script>
+    </body>
+
+</html>
