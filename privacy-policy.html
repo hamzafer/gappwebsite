@@ -152,25 +152,6 @@
         <script src="js/typed.min.js"></script>
         <script src="js/smooth-scroll.min.js"></script>
         <script src="js/scripts.js"></script>
-        <script>
-            const serverURL = "http://admin.gapp.pk"
-            $("#signupForm").on('submit', function (e) {
-                e.preventDefault();
-                $.ajax({
-                    url: `${serverURL}/v1/onboarding/signup`,
-                    data: new FormData($('#signupForm')[0]),
-                    type: 'POST',
-                    contentType: false,
-                    processData: false,
-                    error: function(e) {
-                        $("#errorDiv")[0].innerHTML = e.responseJSON.message
-                    },
-                    success: function(message) {
-                        window.location.replace(`${serverURL}/backoffice`)
-                    }
-                });
-            })
-        </script>
     </body>
 
 </html>
