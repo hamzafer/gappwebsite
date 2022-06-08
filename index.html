@@ -303,11 +303,42 @@
                     type: 'POST',
                     contentType: false,
                     processData: false,
-                    error: function(e) {
+                    error: function (e) {
                         $("#errorDiv")[0].innerHTML = e.responseJSON.message
                     },
-                    success: function(message) {
-                        window.location.replace(`${serverURL}/backoffice`)
+                    success: function (message) {
+                        const formData = new FormData();
+                        formData.append("user_id", message.user_id);
+
+                        $.ajax({
+                            url: `${serverURL}/v1/onboarding/create_stripe_connected_account`,
+                            data: formData,
+                            type: 'POST',
+                            contentType: false,
+                            processData: false,
+                            error: function (e) {
+                                $("#errorDiv")[0].innerHTML = e.responseJSON.message
+                            },
+                            success: function (message) {
+                                const formData = new FormData();
+                                formData.append("user_id", message.user_id);
+
+                                $.ajax({
+                                    url: `${serverURL}/v1/onboarding/create_stripe_account_link`,
+                                    data: formData,
+                                    type: 'POST',
+                                    contentType: false,
+                                    processData: false,
+                                    error: function (e) {
+                                        $("#errorDiv")[0].innerHTML = e.responseJSON.message
+                                    },
+                                    success: function (message) {
+                                        console.log(message.url);
+                                        window.location.replace(message.url);
+                                    }
+                                });
+                            }
+                        });
                     }
                 });
             })
